@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="mixedChart"></canvas>
+    
+ <script>
+    const ctx = document.getElementById('mixedChart').getContext('2d');
+    const mixedChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [
+          {
+            label: 'Dataset 1',
+            data: [800, 1000, 900, 1200, 950],
+            backgroundColor: 'rgba(218, 165, 32, 0.7)', // Golden color
+          },
+          {
+            label: 'Dataset 2',
+            data: [1000, 1200, 800, 1100, 850],
+            backgroundColor: 'rgba(255, 0, 0, 0.7)', // Red color
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
