@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chart.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="expensesChart"></canvas>
+    
+<script>
+    const ctx = document.getElementById('expensesChart').getContext('2d');
+    const expensesChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Development', 'Marketing', 'Operations', 'Design', 'Others'],
+            datasets: [{
+                data: [35, 20, 15, 15, 15],
+                backgroundColor: ['red', 'green', 'blue', 'orange', 'purple'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
